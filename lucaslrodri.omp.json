@@ -5,17 +5,17 @@
   "console_title_template": "{{ if .Root }}root @ {{ end }}{{ .Folder }} :: {{ .Shell }}",
   "blocks": [
     {
-	  "type": "prompt",
+      "type": "prompt",
       "alignment": "left",
-	  "overflow": "hide",
       "segments": [
-	    {
-		  "type": "os",
-		  "style": "diamond",
-          "leading_diamond": "\u256d\u2500\ue0b2",
-          "trailing_diamond": "\ue0b0",
+        {
+          "type": "os",
+          "style": "diamond",
           "foreground": "p:black",
           "background": "p:white",
+          "leading_diamond": "\u256d\u2500\ue0b2",
+          "trailing_diamond": "\ue0b0",
+          "template": " {{.Icon}} ",
           "properties": {
             "alpine": "\uf300",
             "arch": "\uf303",
@@ -32,71 +32,67 @@
             "raspbian": "\uf315",
             "ubuntu": "\uf31c",
             "windows": "\ue70f"
-          },
-          "template": " {{.Icon}} "
+          }
         },
         {
-		  "type": "root",
+          "type": "root",
           "style": "diamond",
-		  "leading_diamond": "<transparent,p:red>\ue0b0</>",
-		  "trailing_diamond": "\ue0b0",
           "foreground": "p:white",
-		  "background": "p:red",
+          "background": "p:red",
+          "leading_diamond": "<transparent,p:red>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
           "template": "\uf0e7 "
-          
         },
         {
-		  "type": "path",
+          "type": "path",
           "style": "diamond",
-          "leading_diamond": "<transparent,p:blue>\ue0b0</>",
-          "trailing_diamond": "\ue0b0",
           "foreground": "p:white",
           "background": "p:blue",
+          "leading_diamond": "<transparent,p:blue>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
+          "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": " \ue5ff ",
             "folder_separator_icon": "/",
             "home_icon": " \ueb06 ",
-            "style": "agnoster_short",
-			"max_depth": 3,
-			"mapped_locations": {
-				"/mnt/c/Users/lucas": " \udb83\udd86 ",
-				"/mnt/c": " \ue70f ",
-				"C:/": " \ue70f ",
-				"/mnt/c/Users/lucas/Github": " \uf408 ",
-				"C:/Users/lucas/Github": " \uf408 ",
-				"/mnt/c/Users/lucas/Insync": " \ue731 ",
-				"C:/Users/lucas/Insync": " \uf408 "
-			}
-          },
-          "template": " {{ .Path }} "
+            "mapped_locations": {
+              "/mnt/c": " \ue70f ",
+              "/mnt/c/Users/lucas": " \udb83\udd86 ",
+              "/mnt/c/Users/lucas/Github": " \uf408 ",
+              "/mnt/c/Users/lucas/Insync": " \ue731 ",
+              "C:/": " \ue70f ",
+              "C:/Users/lucas/Github": " \uf408 ",
+              "C:/Users/lucas/Insync": " \ue731 "
+            },
+            "max_depth": 3,
+            "style": "agnoster_short"
+          }
         }
-      ]
+      ],
+      "overflow": "hide"
     },
     {
       "type": "prompt",
       "alignment": "right",
-      "overflow": "hide",
-	  "segments": [
+      "segments": [
         {
           "type": "status",
           "style": "diamond",
-          "leading_diamond": "\ue0b2",
-          "trailing_diamond": "\ue0b0",
           "foreground": "p:white",
           "background": "p:green",
           "background_templates": [
             "{{ if gt .Code 0 }}p:red{{ end }}"
           ],
+          "leading_diamond": "\ue0b2",
+          "trailing_diamond": "\ue0b0",
           "template": " {{ if gt .Code 0 }}\uf00d{{ else }}\uf00c{{ end }} ",
           "properties": {
             "always_enabled": true
           }
         },
         {
-		  "type": "git",
+          "type": "git",
           "style": "diamond",
-          "leading_diamond": "<transparent,p:gray>\ue0b0</>",
-          "trailing_diamond": "\ue0b0",
           "foreground": "p:green",
           "foreground_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}",
@@ -105,97 +101,100 @@
             "{{ if gt .Behind 0 }}p:green{{ end }}"
           ],
           "background": "p:gray",
+          "leading_diamond": "<transparent,p:gray>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
+          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <transparent>\ue0b1</> <p:red>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <transparent>\ue0b1</> <p:yellow>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <transparent>\ue0b1</> \ueb4b {{ .StashCount }}{{ end }} ",
           "properties": {
-			"branch_max_length": 25,
+            "branch_gone_icon": "\ueab8 ",
+            "branch_icon": "\uf418 ",
+            "branch_identical_icon": "\uf444 ",
+            "branch_max_length": 25,
             "fetch_stash_count": true,
             "fetch_status": true,
             "fetch_upstream_icon": true,
-            "github_icon": "\uf408 ",
-            "branch_icon": "\uf418 ",
-            "branch_identical_icon": "\uf444 ",
-            "branch_gone_icon": "\ueab8 "
-          },
-          "template": " {{ .UpstreamIcon }} {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} <transparent>\ue0b1</> <p:red>\uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} <transparent>\ue0b1</> <p:yellow>\uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} <transparent>\ue0b1</> \ueb4b {{ .StashCount }}{{ end }} "
+            "github_icon": "\uf408 "
+          }
         },
         {
           "type": "dotnet",
-		  "style": "diamond",
+          "style": "diamond",
+          "foreground": "p:white",
+          "background": "p:magenta_dotnet",
           "leading_diamond": "<transparent,p:magenta_dotnet>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
-          "foreground": "p:white",
-		  "background": "p:magenta_dotnet",
           "template": " [.NET] {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} "
         },
         {
-		  "type": "python",
-		  "style": "diamond",
+          "type": "python",
+          "style": "diamond",
+          "foreground": "p:black",
+          "background": "p:yellow",
           "leading_diamond": "<transparent,p:yellow>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
-		  "foreground": "p:black",
-		  "background": "p:yellow",
           "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }} "
         },
         {
-		  "type": "node",
-		  "style": "diamond",
+          "type": "node",
+          "style": "diamond",
+          "foreground": "p:black",
+          "background": "p:green_node",
           "leading_diamond": "<transparent,p:green_node>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
-		  "foreground": "p:black",
-		  "background": "p:green_node",
           "template": " \ue718 {{ .Full }} "
         }
-	  ]
-	},
-	{
+      ],
+      "overflow": "hide"
+    },
+    {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "foreground": "p:white",
+          "type": "text",
           "style": "plain",
-          "template": "\u2570\u2500",
-          "type": "text"
+          "foreground": "p:white",
+          "template": "\u2570\u2500"
         },
         {
+          "type": "time",
+          "style": "plain",
           "foreground": "yellow",
+          "template": " {{ .CurrentDate | date .Format }} ",
           "properties": {
             "time_format": "15:04:05"
-          },
-          "style": "plain",
-          "template": " {{ .CurrentDate | date .Format }} ",
-          "type": "time"
+          }
         },
         {
-          "foreground": "red",
+          "type": "text",
           "style": "plain",
-          "template": "\u279c ",
-          "type": "text"
+          "foreground": "red",
+          "template": "➜ "
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
   "transient_prompt": {
-	"foreground": "green",
-	"background": "transparent",
-	"template": " \u276f <yellow>{{ .Segments.Time.CurrentDate | date .Segments.Time.Format }}</> <red>\u279c</> "
+    "foreground": "green",
+    "background": "transparent",
+    "template": " ❯ <yellow>{{ .Segments.Time.CurrentDate | date .Segments.Time.Format }}</> <red>➜</> "
   },
   "secondary_prompt": {
-	"foreground": "green",
-	"background": "transparent",
-	"template": " \u276f <yellow>{{ .Segments.Time.CurrentDate | date .Segments.Time.Format }}</> <red>\u279c</> "
+    "foreground": "green",
+    "background": "transparent",
+    "template": " ❯ <yellow>{{ .Segments.Time.CurrentDate | date .Segments.Time.Format }}</> <red>➜</> "
   },
   "palette": {
     "black": "#262B44",
-	"gray": "#3c4057",
     "blue": "#4B95E9",
+    "gray": "#3c4057",
     "green": "#59C9A5",
+    "green_node": "#6CA35E",
+    "magenta_dotnet": "#7A306C",
     "orange": "#F07623",
     "red": "#D81E5B",
+    "violet": "#49416D",
     "white": "#E0DEF4",
-    "yellow": "#F3AE35",
-	"magenta_dotnet": "#7A306C",
-	"violet": "#49416D",
-	"green_node": "#6CA35E"
+    "yellow": "#F3AE35"
   }
 }
