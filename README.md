@@ -1,38 +1,40 @@
-# Lucaslrodri theme for [Oh My Posh](https://ohmyposh.dev/)
+# Lucaslrodri Theme for [Oh My Posh](https://ohmyposh.dev/)
 
 > A personal theme for [Oh My Posh](https://ohmyposh.dev/).
 
-![Lucalrodri Oh My Posh Theme running on windows (Powershell)](windows.png)
+![Lucaslrodri Oh My Posh Theme running on Windows (PowerShell)](windows.png)
 
-> Windows (Powershell)
+> Windows (PowerShell)
 
-![Lucaslrodri Oh My Posh Theme running on WLS (Linux - ZSH)](wls.png)
+![Lucaslrodri Oh My Posh Theme running on WSL (Linux - ZSH)](wls.png)
 
-> WLSS - Linux (ZSH)
+> WSL - Linux (ZSH)
 
-The theme provides integration ([segments](https://ohmyposh.dev/docs/configuration/segment)) with `git`, `python`, `node` and `dotnet`.
+The theme provides integration ([segments](https://ohmyposh.dev/docs/configuration/segment)) with `git`, `python`, `node`, and `dotnet`.
 
 ## Install
 
 #### Install Oh My Posh
 
-To install [Oh My Posh](https://ohmyposh.dev/) on MacOS/Windows/Linux follow documentation [here](https://ohmyposh.dev/docs/installation/windows).
+1. Download `lucaslrodri.omp.json` [here](https://github.com/lucaslrodri/oh-my-posh/releases/latest).
 
-#### Active the theme Theme
+2. To install [Oh My Posh](https://ohmyposh.dev/) on macOS/Windows/Linux, follow the documentation [here](https://ohmyposh.dev/docs/installation/windows).
 
-For instructions on activating this theme please refer to the documentation [here](https://ohmyposh.dev/docs/installation/customize).
+#### Activate the Theme
+
+For instructions on how to activate this theme, please refer to the documentation [here](https://ohmyposh.dev/docs/installation/customize).
 
 > [!NOTE]
 >
-> Tested on `powershell` and `zsh`, but may be compatible with any compatible with Oh My Posh. For more information follow documentation [here](https://ohmyposh.dev/docs/installation/prompt).
+> Tested on `PowerShell` and `zsh`. It may be compatible with other shells that support [Oh My Posh](https://ohmyposh.dev/). For more information, follow the documentation [here](https://ohmyposh.dev/docs/installation/prompt).
 
-### Fonts
+#### Fonts
 
-[Oh My Posh](https://ohmyposh.dev/) has a utility to install a compatible [Nerd Font](https://www.nerdfonts.com/), please refer to the documentation [here](https://ohmyposh.dev/docs/installation/fonts). This theme was tested with [Meslo LGM NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip), for other fonts you should test it before.
+[Oh My Posh](https://ohmyposh.dev/) provides a utility to install a compatible [Nerd Font](https://www.nerdfonts.com/). Please refer to the documentation [here](https://ohmyposh.dev/docs/installation/fonts). This theme was tested with [Meslo LGM NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip). You should test other fonts before using them.
 
 ## Thanks
 
-💙 Inspired by [patriksvensson](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/patriksvensson.omp.json) + [quick-term](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/quick-term.omp.json) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
+💙 Inspired by [patriksvensson](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/patriksvensson.omp.json), [quick-term](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/quick-term.omp.json), and [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
 
 ## License
 
