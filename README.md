@@ -30,9 +30,10 @@ For instructions on activating this theme please refer to the documentation [her
 
 [Oh My Posh](https://ohmyposh.dev/) has a utility to install a compatible [Nerd Font](https://www.nerdfonts.com/), please refer to the documentation [here](https://ohmyposh.dev/docs/installation/fonts). This theme was tested with [Meslo LGM NF](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/Meslo.zip), for other fonts you should test it before.
 
+## Thanks
+
+💙 Inspired by [patriksvensson](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/patriksvensson.omp.json) + [quick-term](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/quick-term.omp.json) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k).
+
 ## License
 
 [MIT License](./LICENSE)
-
-<p style="text-align: center;">💙 Inspired by <a href="https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/patriksvensson.omp.json">patriksvensson</a> + <a href="https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/quick-term.omp.json">quick-term</a> + <a href="https://github.com/romkatv/powerlevel10k">Powerlevel10k</a>.</p>
-
